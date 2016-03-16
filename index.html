@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Google Maps</title>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <title>Maps!</title>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCL0C61bgWY6n2skCT04ligeIBOFQueKiU&sensor=true"></script>
   </head>
-  <body>
-    <div class="container">
-      <h1>Enter the location!</h1>
-      <form id="maps">
-        <div class="form-group">
-          <label for="goal">Enter a location:</label>
-          <input id="goal" type="text">
-          <button class="btn-success" type="submit">Submit</button>
-        </div>
-      </form>
-      <ul id="solution">
-      </ul>
-    </div>
+  <body class="container">
+    <h1>Maps</h1>
+    <style>
+      html, body {
+        height: 75%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 75%;
+        width: 75%;
+      }
+    </style>
+    <div id="map"></div>
   </body>
 </html>
