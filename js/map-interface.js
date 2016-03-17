@@ -39,12 +39,6 @@ $(document).ready(function(){
     lng: -122.676482
   });
 
-  googleMaps.on('marker_added', map, function(marker) {
-    $('#markers-with-index').append('<li><a href="#" class="pan-to-marker" data-marker-index="' + map.markers.indexOf(marker) + '">' + marker.title + '</a></li>');
-
-    $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
-  });
-
   googleMaps.on('click', map.map, function(event) {
     var index = map.markers.length;
     var lat = event.latLng.lat();
@@ -53,6 +47,16 @@ $(document).ready(function(){
     var template = $('#edit_marker_template').text();
 
     var content;
+    map.addMarker({
+      lat: lat,
+      lng: lng,
+      icon: "/images/mapicon.png",
+      title: 'Marker #',
+      infoWindow: {
+        content : "<p>" +
+        "<input type='text'> " +"</p>"
+        }
+      });
     });
 
     $('#geocoding-form').submit(function(e){
@@ -73,21 +77,10 @@ $(document).ready(function(){
             infoWindow: {
               content : "<p>" +
               "<input type='text'> " +"</p>"
-              }
-            });
-          }
+            }
+          });
         }
-      });
-    });
-    map.addMarker({
-      lat: lat,
-      lng: lng,
-      icon: "/images/mapicon.png",
-      title: 'Marker #' + index,
-      infoWindow: {
-        content: "<p>" + "<input type='text'>" + "</p>"
       }
     });
+  });
 });
-
-////goooglemapppsss
