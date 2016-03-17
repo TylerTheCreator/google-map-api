@@ -11,20 +11,6 @@ $(document).ready(function() {
         lng: -122.676482
     });
   });
-$(document).on('submit', '.edit_marker', function(e) {
-  e.preventDefault();
-  var $index = $(this).data('marker-index');
-  $lat = $('#marker_' + index + '_lat').val();
-  $lng = $('#marker_' + index + '_lng').val();
-  var template = $('#edit_marker_template').text();
-
-  var content = template.replace(/{{index}}/g, $index).replace(
-    /{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
-    map.markers[$index].infoWindow.setContent(content);
-    $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
-    $marker.data('marker-lat', $lat);
-    $marker.data('marker-lng', $lng);
-});
 
 $(document).on('click', '.pan-to-marker', function(e) {
     // event.preventDefault();
