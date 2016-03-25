@@ -1,6 +1,6 @@
 var googleMaps = require('gmaps');
 
-var apiKey = "AIzaSyCrTvI2jhLoJQ0Vr6rTWMYmRRQJw5zKTA0";
+var apiKey = "your key";
 
 var map;
 
